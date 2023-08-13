@@ -1,0 +1,39 @@
+file 38799 1654769896                                           
+version 2
+run Network-4-20220609-13:14:42-21268
+attr configname Network
+attr datetime 20220609-13:14:42
+attr experiment Network
+attr inifile omnetpp.ini
+attr iterationvars $lambda=0.5
+attr iterationvarsf lambda=0.5-
+attr measurement $lambda=0.5
+attr network Network
+attr processid 21268
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+itervar lambda 0.5
+param Network.hosts[*].app*.time_bwn_msg exponential(1s/0.5)
+param Network.hosts[*].app*.packet_len int(normal(1000B,150B))
+param Network.hosts[*].ip*.dest_idx intuniform(0,9)
+param Network.hosts[*].eth*.arp_aging_time 1000s
+param Network.hosts[*].eth*.arp_aging_time_9 1000s
+param Network.hosts[*].app*.sec 1s
+param Network.switch.switch_aging_time 1s
+param Network.switch.switch_latency 0.000000003s
+
+vector 0 Network.hosts[0].eth interval_vector_ARP ETV
+vector 1 Network.hosts[0].eth "interval vector ARP host 9" ETV
+vector 2 Network.switch "" ETV
+vector 3 Network.hosts[0].app inteval_vector ETV
+0	1029 191 5 95 0.379171329752 1.584758816586 6 0.379171329752 1.584758816586 5.963978446338 6.6553280046969
+1	1220 28 80 80 1.00002079 1.00002079 1 1.00002079 1.00002079 1.00002079 1.0000415804322
+2	1248 273 109 151 1.666040672887 2.848458586675 7 0.00012290199999978 0.00020831399999992 0.001148498 1.94168696348e-007
+3	1521 231 112 162 1.666146746887 2.848539428675 7 6.5902e-005 1.666146746887 2.848539428675 3.6068268161033
+0	1752 72 332 592 4.61764490728 7.200598087839 2 4.61764490728 7.200598087839 11.818242995119 73.17125731232
+2	1824 20002 178 7428 3.00007152 74.00009968 493 0.00010203800000117 0.0002415659999971 0.083627801999698 1.4469293436139e-005
+3	21826 16971 193 7483 3.000145722 74.000576626 493 6.4906e-005 0.999725924 71.152037197325 41.361731390803
+
